@@ -8,7 +8,14 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    @if (Session::has("message"))
+                        {{ Session::get("message") }}
+                    @endif
+                    <form action="/excel" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                        <input type="file" name="file">
+                        <input type="submit">
+                    </form>
                 </div>
             </div>
         </div>
