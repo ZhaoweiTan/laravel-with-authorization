@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ExcelUpload extends Model
 {
-    protected $table = 'excel_uploads';
+    protected $table = 'dce';
 
     protected $fillable = [
-        'name', 'occupation', 'age',
+        'ID','authors','title','conf','abbreviation','page','year','toopic','abstract','people'
     ];
 
 }
