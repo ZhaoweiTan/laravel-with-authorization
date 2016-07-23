@@ -19,7 +19,10 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/paper', 'PaperController@index');
+Route::group(['prefix' => 'paper'], function () {
+  Route::get('/', 'PaperController@index');
+  Route::get('/allvenue', 'PaperController@allvenue');
+});
 
 
 Route::post('/excel', 'UploadController@uploadExcel');

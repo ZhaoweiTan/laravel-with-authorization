@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 
@@ -25,5 +26,11 @@ class PaperController extends Controller
     public function index()
     {
         return view('search');
+    }
+
+    public function allvenue()
+    {
+      $venues = DB::table('papers')->select('abbreviation')->distinct()->get();
+      return view('results.allvenue',['venues' => $venues]);
     }
 }
