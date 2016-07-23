@@ -20,8 +20,10 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 Route::group(['prefix' => 'paper'], function () {
-  Route::get('/', 'PaperController@index');
-  Route::get('/allvenue', 'PaperController@allvenue');
+    Route::get('/', 'PaperController@index');
+    Route::get('/allvenue', 'PaperController@allvenue');
+    Route::get('/venue', 'PaperController@venue');
+    Route::get('/paper','PaperController@paper');
 });
 
 

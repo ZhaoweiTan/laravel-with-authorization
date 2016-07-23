@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Input;
 use DB;
 use App\Http\Requests;
 use Illuminate\Http\Request;
+
+
 
 class PaperController extends Controller
 {
@@ -32,5 +35,12 @@ class PaperController extends Controller
     {
       $venues = DB::table('papers')->select('abbreviation')->distinct()->get();
       return view('results.allvenue',['venues' => $venues]);
+    }
+
+    public function venue()
+    {
+        $v = Input::get('v');
+        $paperInVenue = DB::table('papers')->where('abbreviation', $v)->get();
+        return view('results.venue',['paperInVenue' => $paperInVenue]);
     }
 }
