@@ -8,10 +8,14 @@
                     <div class="panel-heading">Dashboard</div>
 
                     <div class="panel-body">
-                        @foreach($paperInVenue as $paper)
-                            <a href="paper?ID={{$paper->ID}}">{{$paper->title}} ({{$paper->year}})</a>
-                            <br />
+                        @foreach($paperInfo as $paper)
+                            <h2>{{$paper->title}}</h2>
+                            <p>{{$paper->conf}} ({{$paper->abbreviation}}), {{$paper->page}}, {{$paper->year}}</p>
+                            <p>Topic: {{$paper->topic}}</p>
+                            <p>Abstract: {{$paper->abstract}}</p>
+                            <p>整理人: {{$paper->people}}</p>
                         @endforeach
+
                     </div>
                 </div>
             </div>

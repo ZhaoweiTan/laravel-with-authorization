@@ -8,8 +8,8 @@
                     <div class="panel-heading">Dashboard</div>
 
                     <div class="panel-body">
-                        @foreach($paperInVenue as $paper)
-                            <a href="paper?ID={{$paper->ID}}">{{$paper->title}} ({{$paper->year}})</a>
+                        @foreach($papers as $paper)
+                            <a href="paper?ID={{$paper->ID}}">{{$paper->title}}</a> from {{$paper->abbreviation}} ({{$paper->year}})
                             <br />
                         @endforeach
                     </div>

@@ -24,6 +24,7 @@ Route::group(['prefix' => 'paper'], function () {
     Route::get('/allvenue', 'PaperController@allvenue');
     Route::get('/venue', 'PaperController@venue');
     Route::get('/paper','PaperController@paper');
+    Route::get('/keyword','PaperController@keyword');
 });
 
 
