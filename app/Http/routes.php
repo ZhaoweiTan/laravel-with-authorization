@@ -19,6 +19,8 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/paper', 'PaperController@index');
+
 
 Route::post('/excel', 'UploadController@uploadExcel');
 
